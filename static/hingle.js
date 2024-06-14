@@ -192,12 +192,13 @@ var Paul_Hingle = function (config) {
     form.onsubmit = function (ev) {
       ev.preventDefault();
 
-      window.open(
-        "https://www.bing.com/search?q=site:" +
-          location.host +
-          " " +
-          input.value.trim()
-      );
+      window.open("https://www.bing.com/search?q=" + input.value.trim());
+      // window.open(
+      //   "https://www.bing.com/search?q=site:" +
+      //     location.host +
+      //     " " +
+      //     input.value.trim()
+      // );
     };
   };
 
