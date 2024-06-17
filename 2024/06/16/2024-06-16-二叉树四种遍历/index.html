@@ -59,19 +59,20 @@
 </header>
 
     <main>
-    <div class="wrap min">
-        <section class="post-title">
-            <h2>二叉树四种遍历方法（C语言）</h2>
-            <div class="post-meta">
-                <time class="date">2024.06.16</time>
-            
-                <span class="category"><a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span>
-            
-            </div>
-        </section>
-        <article class="post-content">
+  <div class="wrap min">
+    <section class="post-title">
+      <h2>二叉树四种遍历方法（C语言）</h2>
+      <div class="post-meta">
+        <time class="date">2024.06.16</time>
         
-            <h4 id="数据结构——二叉树先序、中序、后序三种遍历"><a href="#数据结构——二叉树先序、中序、后序三种遍历" class="headerlink" title="数据结构——二叉树先序、中序、后序三种遍历"></a>数据结构——二叉树先序、中序、后序三种遍历</h4><h2 id="一、图示展示："><a href="#一、图示展示：" class="headerlink" title="一、图示展示："></a>一、图示展示：</h2><h3 id="（1）先序遍历"><a href="#（1）先序遍历" class="headerlink" title="（1）先序遍历"></a>（1）先序遍历</h3><blockquote>
+        <span class="category"
+          ><a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span
+        >
+        
+      </div>
+    </section>
+    <article class="post-content">
+       <h4 id="数据结构——二叉树先序、中序、后序三种遍历"><a href="#数据结构——二叉树先序、中序、后序三种遍历" class="headerlink" title="数据结构——二叉树先序、中序、后序三种遍历"></a>数据结构——二叉树先序、中序、后序三种遍历</h4><h2 id="一、图示展示："><a href="#一、图示展示：" class="headerlink" title="一、图示展示："></a>一、图示展示：</h2><h3 id="（1）先序遍历"><a href="#（1）先序遍历" class="headerlink" title="（1）先序遍历"></a>（1）先序遍历</h3><blockquote>
 <p>先序遍历可以想象为，一个小人从一棵二叉树根节点为起点，沿着二叉树外沿，逆时针走一圈回到根节点，路上遇到的元素顺序，就是先序遍历的结果</p>
 </blockquote>
 <p>先序遍历结果为：A B D H I E J C F K G</p>
@@ -121,36 +122,61 @@
 <p>这里的根，指的是每个分叉子树（左右子树的根节点）根节点，并不只是最开始头顶的根节点，需要灵活思考理解，建议画图理解！！</p>
 <h2 id="二、代码展示："><a href="#二、代码展示：" class="headerlink" title="二、代码展示："></a>二、代码展示：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">typedef struct Tree&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="type">int</span> data;					<span class="comment">//	存放数据域</span></span><br><span class="line"> struct Tree *lchild;			<span class="comment">//	遍历左子树指针</span></span><br><span class="line"> struct Tree *rchild;			<span class="comment">//	遍历右子树指针</span></span><br><span class="line"></span><br><span class="line">&#125;Tree,*BitTree;</span><br><span class="line"></span><br><span class="line">BitTree <span class="title function_">CreateLink</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	<span class="type">int</span> temp;</span><br><span class="line">	BitTree T;</span><br><span class="line"></span><br><span class="line">	scanf(<span class="string">&quot;%d&quot;</span>,&amp;data);		<span class="comment">//	输入数据</span></span><br><span class="line">	temp=getchar();			<span class="comment">//	吸收空格</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(data == -<span class="number">1</span>)&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     			<span class="comment">//	输入-1 代表此节点下子树不存数据，也就是不继续递归创建</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> NULL;</span><br><span class="line"></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		T = (BitTree)malloc(sizeof(Tree));			<span class="comment">//		分配内存空间</span></span><br><span class="line">		T-&gt;data = data;								<span class="comment">//		把当前输入的数据存入当前节点指针的数据域中</span></span><br><span class="line"></span><br><span class="line">		printf(<span class="string">&quot;请输入%d的左子树: &quot;</span>,data);</span><br><span class="line">		T-&gt;lchild = CreateLink();					<span class="comment">//		开始递归创建左子树</span></span><br><span class="line">		printf(<span class="string">&quot;请输入%d的右子树: &quot;</span>,data);</span><br><span class="line">		T-&gt;rchild = CreateLink();					<span class="comment">//		开始到上一级节点的右边递归创建左右子树</span></span><br><span class="line">		<span class="keyword">return</span> T;							<span class="comment">//		返回根节点</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	先序遍历</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">ShowXianXu</span><span class="params">(BitTree T)</span>			<span class="comment">//		先序遍历二叉树</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(T==NULL)						<span class="comment">//	递归中遇到NULL，返回上一层节点</span></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(<span class="string">&quot;%d &quot;</span>,T-&gt;data);</span><br><span class="line">	ShowXianXu(T-&gt;lchild);			<span class="comment">//	递归遍历左子树</span></span><br><span class="line">	ShowXianXu(T-&gt;rchild);			<span class="comment">//	递归遍历右子树</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	中序遍历</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">ShowZhongXu</span><span class="params">(BitTree T)</span>			<span class="comment">//		先序遍历二叉树</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(T==NULL)						<span class="comment">//	递归中遇到NULL，返回上一层节点</span></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ShowZhongXu(T-&gt;lchild);			<span class="comment">//	递归遍历左子树</span></span><br><span class="line">	printf(<span class="string">&quot;%d &quot;</span>,T-&gt;data);</span><br><span class="line">	ShowZhongXu(T-&gt;rchild);			<span class="comment">//	递归遍历右子树</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	后序遍历</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">ShowHouXu</span><span class="params">(BitTree T)</span>			<span class="comment">//		后序遍历二叉树</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(T==NULL)						<span class="comment">//	递归中遇到NULL，返回上一层节点</span></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ShowHouXu(T-&gt;lchild);			<span class="comment">//	递归遍历左子树</span></span><br><span class="line">	ShowHouXu(T-&gt;rchild);			<span class="comment">//	递归遍历右子树</span></span><br><span class="line">	printf(<span class="string">&quot;%d &quot;</span>,T-&gt;data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	BitTree S;</span><br><span class="line">	printf(<span class="string">&quot;请输入第一个节点的数据:\n&quot;</span>);</span><br><span class="line">	S = CreateLink();			<span class="comment">//		接受创建二叉树完成的根节点</span></span><br><span class="line">	printf(<span class="string">&quot;先序遍历结果: \n&quot;</span>);</span><br><span class="line">	ShowXianXu(S);				<span class="comment">//		先序遍历二叉树</span></span><br><span class="line"></span><br><span class="line">	printf(<span class="string">&quot;\n中序遍历结果: \n&quot;</span>);</span><br><span class="line">	ShowZhongXu(S);				<span class="comment">//		中序遍历二叉树</span></span><br><span class="line"></span><br><span class="line">	printf(<span class="string">&quot;\n后序遍历结果: \n&quot;</span>);</span><br><span class="line">	ShowHouXu(S);				<span class="comment">//		后序遍历二叉树</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </article>
-        <section class="post-near">
-            <ul>
-                
-                    <li>上一篇: <a href="/2024/06/17/2024-06-17-Win11%E6%90%9C%E7%B4%A2%E6%A1%86%E6%81%A2%E5%A4%8D%E6%88%90%E6%94%BE%E5%A4%A7%E9%95%9C/">Windows11搜索框变大小</a></li>
-                
-                
-                    <li>下一篇: <a href="/2024/06/16/2024-06-16-%E8%A7%A3%E5%86%B3VUE%E6%89%93%E5%8C%85%E5%90%8E%E6%98%BE%E7%A4%BA%E4%B8%BA%E7%A9%BA%E7%99%BD%E9%A1%B5%E7%9A%84%E6%96%B9%E6%B3%95/">解决vue打包后显示为空白页的方法</a></li>
-                
-            </ul>
-        </section>
+    </article>
+    <section class="post-near">
+      <ul>
         
-            <section class="post-tags">
-            <a class="-none-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><a class="-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95/" rel="tag">数据结构算法</a>
-            </section>
+        <li>
+          上一篇:
+          <a href="/2024/06/17/2024-06-17-Win11%E6%90%9C%E7%B4%A2%E6%A1%86%E6%81%A2%E5%A4%8D%E6%88%90%E6%94%BE%E5%A4%A7%E9%95%9C/">Windows11搜索框变大小</a>
+        </li>
+         
+        <li>
+          下一篇:
+          <a href="/2024/06/16/2024-06-16-%E8%A7%A3%E5%86%B3VUE%E6%89%93%E5%8C%85%E5%90%8E%E6%98%BE%E7%A4%BA%E4%B8%BA%E7%A9%BA%E7%99%BD%E9%A1%B5%E7%9A%84%E6%96%B9%E6%B3%95/">解决vue打包后显示为空白页的方法</a>
+        </li>
         
+      </ul>
+    </section>
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="XiaMuqingyuan/XiaMuqingyuan.github.io"
+      data-repo-id="R_kgDOMI6vyA"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async
+    ></script>
+
+    <!-- 上面评论属性     
+        data-category="[在此输入分类名]"
+        data-category-id="[在此输入分类 ID]" 
+        
+    -->
+
     
-        <section class="post-author">
-        
-            <figure class="author-avatar">
-                <img src="https://files.cnblogs.com/files/blogs/808760/touxiang.gif?t=1700582933&download=true" alt="Frost" />
-            </figure>
-        
-            <div class="author-info">
-                <h4>Frost</h4>
-                <p>恨君不似江楼月，南北东西，南北东西，只有相随无别离。</p>
-            </div>
-        </section>
+    <section class="post-tags">
+      <a class="-none-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a><a class="-none-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95/" rel="tag">数据结构算法</a>
+    </section>
+     
+    <section class="post-author">
+      
+      <figure class="author-avatar">
+        <img src="https://files.cnblogs.com/files/blogs/808760/touxiang.gif?t=1700582933&download=true" alt="Frost" />
+      </figure>
+      
+      <div class="author-info">
+        <h4>Frost</h4>
+        <p>恨君不似江楼月，南北东西，南北东西，只有相随无别离。</p>
+      </div>
+    </section>
     
-    </div>
+  </div>
 </main>
 
     <footer>
